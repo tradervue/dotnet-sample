@@ -47,6 +47,8 @@ namespace importer
 
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("User-Agent",
+                "DotNet Sample Application (https://github.com/tradervue/dotnet-sample)");
 
             HttpResponseMessage response = client.GetAsync("imports").Result;
             if (response.IsSuccessStatusCode)
@@ -71,6 +73,8 @@ namespace importer
 
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("User-Agent",
+                "DotNet Sample Application (https://github.com/tradervue/dotnet-sample)");
 
             StringContent payload = new StringContent(import.ToJson(), new UTF8Encoding(), "application/json");
             HttpResponseMessage response = client.PostAsync("imports", payload).Result;

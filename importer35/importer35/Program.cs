@@ -43,6 +43,7 @@ namespace importer
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.tradervue.com/api/v1/imports");
             req.Accept = "application/json";
             req.ContentType = "application/json";
+            req.UserAgent = "DotNet Sample Application (https://github.com/tradervue/dotnet-sample)";
             req.Credentials = new NetworkCredential(username, password);
             try
             {
@@ -86,6 +87,7 @@ namespace importer
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.tradervue.com/api/v1/imports");
             req.Accept = "application/json";
             req.ContentType = "application/json";
+            req.UserAgent = "DotNet Sample Application (https://github.com/tradervue/dotnet-sample)";
             req.Credentials = new NetworkCredential(username, password);
             req.Method = "POST";
             Stream rs = req.GetRequestStream();
