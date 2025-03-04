@@ -21,7 +21,7 @@ namespace importer
             import.AddTag("two");
             import.AddExecution(new Execution("2013-02-07T09:53:34-05:00", "SPY", "100", "151.05", "", "1.00", "0.04", "0.21"));
             import.AddExecution(new Execution("2013-02-07T09:54:01-05:00", "SPY", "-100", "150.94", "", "1.00", "0.17", "0.21"));
-            
+
             status = CreateImport(username, password, import);
             Console.WriteLine("Importing trades: " + status);
 
@@ -40,7 +40,7 @@ namespace importer
 
         static string GetImportStatus(string username, string password)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.tradervue.com/api/v1/imports");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://app.tradervue.com/api/v1/imports");
             req.Accept = "application/json";
             req.ContentType = "application/json";
             req.UserAgent = "DotNet Sample Application (https://github.com/tradervue/dotnet-sample)";
@@ -84,7 +84,7 @@ namespace importer
 
         static string CreateImport(string username, string password, Import import)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.tradervue.com/api/v1/imports");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://app.tradervue.com/api/v1/imports");
             req.Accept = "application/json";
             req.ContentType = "application/json";
             req.UserAgent = "DotNet Sample Application (https://github.com/tradervue/dotnet-sample)";

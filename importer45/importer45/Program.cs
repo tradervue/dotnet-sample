@@ -22,7 +22,7 @@ namespace importer
             import.AddTag("two");
             import.AddExecution(new Execution("2013-02-07T09:53:34-05:00", "SPY", "100", "151.05", "", "1.00", "0.04", "0.21"));
             import.AddExecution(new Execution("2013-02-07T09:54:01-05:00", "SPY", "-100", "150.94", "", "1.00", "0.17", "0.21"));
-            
+
             status = CreateImport(username, password, import);
             Console.WriteLine("Importing trades: " + status);
 
@@ -42,7 +42,7 @@ namespace importer
         static string GetImportStatus(string username, string password)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://www.tradervue.com/api/v1/");
+            client.BaseAddress = new Uri("https://app.tradervue.com/api/v1/");
             client.DefaultRequestHeaders.Authorization = CreateBasicHeader(username, password);
 
             client.DefaultRequestHeaders.Accept.Add(
@@ -68,7 +68,7 @@ namespace importer
         static string CreateImport(string username, string password, Import import)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://www.tradervue.com/api/v1/");
+            client.BaseAddress = new Uri("https://app.tradervue.com/api/v1/");
             client.DefaultRequestHeaders.Authorization = CreateBasicHeader(username, password);
 
             client.DefaultRequestHeaders.Accept.Add(
